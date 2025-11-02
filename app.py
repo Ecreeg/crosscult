@@ -16,7 +16,7 @@ def show_login():
 
     # Google OAuth URL setup
     google_client_id = st.secrets["GOOGLE_CLIENT_ID"]
-    redirect_uri = "http://localhost:8501"  # change to deployed app URL later
+    redirect_uri = "https://crossculture.streamlit.app/"
     auth_url = (
         "https://accounts.google.com/o/oauth2/v2/auth?"
         f"client_id={google_client_id}&"
@@ -101,3 +101,4 @@ if "user_email" not in st.session_state:
         show_login()
 else:
     show_main_app(st.session_state["user_email"])
+
